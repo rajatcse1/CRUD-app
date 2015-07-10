@@ -1,0 +1,15 @@
+<a ui-sref="newResource" class="btn-primary btn-lg nodecoration">Add New Resource</a>
+<table class="table movietable">
+    <!-- <tr ng-repeat="resource in resources">
+        <td ng-repeat="(key, value) in resource | onlySchemas">{{key}}</td>
+        <td></td>
+    </tr> -->
+    <tr ng-repeat="resource in resources">
+        <td ng-repeat="(key, value) in resource | onlySchemas">{{resource[key]}}</td>
+
+        <td>
+            <a class="btn btn-primary" ui-sref="viewResource({id:resource._id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteResource(resource)">Delete</a>
+        </td>
+    </tr>
+</table>
